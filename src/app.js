@@ -18,7 +18,8 @@ function eventListeners(){
     document.addEventListener("DOMContentLoaded",uploadAllTodos);
     
     form.addEventListener("submit",sendTodos);
-    enterTodo.addEventListener("click",enteredTodos);
+   
+    
 
 }
 function uploadAllTodos(e){
@@ -29,18 +30,28 @@ function uploadAllTodos(e){
 
 function sendTodos(e){
     const enteredValue = enterTodo.value.trim();
+    const selectedAllLi = document.querySelectorAll(".list-group-item"); 
+    let control = false;
 
     if(enteredValue === ""){
         ui.showAlert("danger","Please enter a to-do");
     }
     else{
-        storage.addTodos(enteredValue);
+        selectedAllLi.forEach((listItem) => {
+            if(listItem.textContent == enterTodo){
+                control = true;
+            }
+        });
+            if(control == false){
+                storage.addTodos(enteredValue);
+                ui.addATodoIntoUI(enteredValue);
+            }
+            else{
+                ui.showAlert("warning","Bu değer daha önce girilmişti.")
+            }
     }
-  
+    enterTodo.value = "";
     e.preventDefault();
 }
 
 
-function enteredTodos(e){
-
-}

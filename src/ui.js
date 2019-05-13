@@ -31,4 +31,13 @@ export default class UI{
         this.listGroup.innerHTML = html;
 
     }
+
+    addATodoIntoUI(data){
+        this.listGroupi.innerHTML += `
+        <li class="list-group-item" style="margin-bottom:11px">
+            <b>${data}</b>
+            <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
+            <button class="btnTrash" style="float: right;"><i class="fa fa-check"></i></button>
+        </li>`;
+    }
 }
