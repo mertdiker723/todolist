@@ -1,0 +1,48 @@
+.btnAdd {
+  background-color: rgb(190, 190, 190);
+  border: none;
+  color: black;
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btnAdd:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+
+.btnClearAll {
+  background-color: rgb(190, 190, 190);
+  border: none;
+  color: black;
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  margin-left: 6px;
+}
+
+.btnClearAll:hover {
+  background-color: #B92708;
+  color: white;
+}
+
+.btnTrash {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 5px 9px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* Darker background on mouse-over */
+.btnTrash:hover {
+  background-color: RoyalBlue;
+}

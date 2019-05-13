@@ -4,12 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Todo List</title>
 </head>
 <body>
+    <div class="container" style ="margin-top:20px">
+                                     
+        <div class="card row" style="background-color:whitesmoke">
+                <div class="card">
+                        <h5 class="card-header" style="background-color:#C0C0C0">Todo List</h5>
+                        <div class="card-body" style="background-color:#E0F792">
+                          <h5 class="card-title">Please Enter Your To-Do List Below</h5>
+                          <p class="card-text">ToDoList is software in the category of Task Management, Project Management, Productivity, “Getting Things Done” (GTD), Scheduling, and Collaboration.</p>
+                        </div>
+                      </div>
+            <div class="card-body">
+                    <form id = "todo-form" name="form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input class="form-control" type="text" name="todo" id = "todo" placeholder="Enter a task">
+                            </div>
+                        </div>                               
+                        <button type="submit" class="btnAdd">Adding Todo</button>
+                    </form>
+                <hr>
+                
+             </div>
+         
+             <div class="card-body">
+                    <hr>
+                    <h5 class="card-title" id = "tasks-title">To-dos</h5>
+                    <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input class="form-control" type="text" name="filter" id = "filter" placeholder="Search a task">
+                            </div>
+                    </div>
+
+                    <hr>
+                    <button id="deleteAll" class="btn btn-primary btn-sm d-none">Delete Selected</button>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Todo 1
+                            <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
+                            <button class="btnTrash" style="float: right;"><i class="fa fa-check"></i></button>
+                        </li>     
+
+                    </ul>
+                    
+                    <hr>  
+                    <button id = "clear-todos" class="btnClearAll" >Clear all taskes</button>
+                    <!-- <a id = "clear-todos" class="btnClearAll" href="#">Clear all taskes</a>   -->
+                                 
+                </div>
+              </div>
+        
+    </div>
+
 
     
-
-    <script src="./bundles/bundle.js"></script>    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./src/app.js"></script>
 </body>
 </html>
