@@ -22,8 +22,11 @@ export default class UI{
             html += `
             <li class="list-group-item" style="margin-bottom:11px">
                <b>${text}</b>
+               
+              
                <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
                <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>
+               <button class="btnClone" style="float: right;"><i class="fa fa-exchange"></i></button>   
             </li>     
 
             `;
@@ -36,8 +39,10 @@ export default class UI{
         this.listGroup.innerHTML += `
         <li class="list-group-item" style="margin-bottom:11px">
             <b>${data}</b>
+ 
             <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
-            <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>
+            <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>            
+            <button class="btnClone" style="float: right;"><i class="fa fa-exchange"></i></button>     
         </li>`;
     }
     deleteTodoFromUI(element){

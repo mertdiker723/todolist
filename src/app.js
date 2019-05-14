@@ -11,8 +11,8 @@ const searchTodo = document.getElementById("filter");
 const deleteAllTodos = document.getElementById("clear-todos");
 //update etme işlemide yap
 const ulListGroup = document.getElementById("ulListGroup");
-
 const deleteAll = document.getElementById("deleteAll");
+const filterText = document.getElementById("filter");
 
 eventListeners();
 
@@ -22,7 +22,7 @@ function eventListeners(){
     form.addEventListener("submit",sendTodos);
     ulListGroup.addEventListener("click",deleteTodo);
     deleteAllTodos.addEventListener("click",deleteTodosFromUIandStorage);    
-
+    filterText.addEventListener("keyup",filterWrite);
 }
 
 function uploadAllTodos(e){
@@ -99,3 +99,19 @@ deleteAll.addEventListener("click",(e) => {
         buttonAppearInUI.classList.add("d-none");
     });
 })
+ 
+function filterWrite(e){
+    const filterInput = e.target.value.toLowerCase();
+    const listFilter = document.querySelectorAll(".list-group-item");
+
+    listFilter.forEach((item) => {
+        const itemCase = item.textContent.trim().toLowerCase();
+
+        if(itemCase.indexOf(filterInput) === -1){
+            item.setAttribute("style","display : none !important");
+        }
+        else{
+            item.setAttribute("style","display : block");            
+        }
+    })
+}
