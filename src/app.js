@@ -22,6 +22,7 @@ function eventListeners(){
     
 
 }
+
 function uploadAllTodos(e){
     const allTodos = storage.getTodos();
      ui.addTodoTaskIntoUI(allTodos);
@@ -32,22 +33,24 @@ function sendTodos(e){
     const enteredValue = enterTodo.value.trim();
     const selectedAllLi = document.querySelectorAll(".list-group-item"); 
     let control = false;
+    let text;
 
     if(enteredValue === ""){
         ui.showAlert("danger","Please enter a to-do");
     }
     else{
         selectedAllLi.forEach((listItem) => {
-            if(listItem.textContent == enterTodo){
-                control = true;
+            if(listItem.textContent.trim().toLowerCase() == enteredValue.toLowerCase()){     // küçük büyük harf olayını hallet          
+                control = true; //****
             }
         });
-            if(control == false){
-                storage.addTodos(enteredValue);
+            if(control == false){                
                 ui.addATodoIntoUI(enteredValue);
+                storage.addTodos(enteredValue);
             }
-            else{
-                ui.showAlert("warning","Bu değer daha önce girilmişti.")
+             else
+            {
+            ui.showAlert("warning","To-Do entered was created before!");
             }
     }
     enterTodo.value = "";

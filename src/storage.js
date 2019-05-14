@@ -19,4 +19,8 @@ export default class Storage{
         allTodos.push(data);
         localStorage.setItem("todos",JSON.stringify(allTodos));
     }
+    
+    deleteOneTodo(){
+        
+    }
 }
