@@ -30,4 +30,5 @@ export default class Storage{
         });
         localStorage.setItem("todos",JSON.stringify(allTodos));
     }
+
 }

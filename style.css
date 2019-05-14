@@ -100,3 +100,20 @@
 .btnExchange:hover {
   background-color: RoyalBlue;
 }
+
+
+.btnSelectedUpdate {
+  background-color: rgb(190, 190, 190);
+  border: none;
+  color: black;
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btnSelectedUpdate:hover {
+  background-color: #54abd3;
+  color: white;
+}

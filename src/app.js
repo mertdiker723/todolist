@@ -14,6 +14,7 @@ const ulListGroup = document.getElementById("ulListGroup");
 const deleteAll = document.getElementById("deleteAll");
 const filterText = document.getElementById("filter");
 
+
 eventListeners();
 
 function eventListeners(){
@@ -23,6 +24,7 @@ function eventListeners(){
     ulListGroup.addEventListener("click",deleteTodo);
     deleteAllTodos.addEventListener("click",deleteTodosFromUIandStorage);    
     filterText.addEventListener("keyup",filterWrite);
+    
 }
 
 function uploadAllTodos(e){
