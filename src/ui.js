@@ -23,7 +23,7 @@ export default class UI{
             <li class="list-group-item" style="margin-bottom:11px">
                <b>${text}</b>
                <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
-               <button class="btnTrash" style="float: right;"><i class="fa fa-check"></i></button>
+               <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>
             </li>     
 
             `;
@@ -37,7 +37,10 @@ export default class UI{
         <li class="list-group-item" style="margin-bottom:11px">
             <b>${data}</b>
             <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
-            <button class="btnTrash" style="float: right;"><i class="fa fa-check"></i></button>
+            <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>
         </li>`;
+    }
+    deleteTodoFromUI(element){
+        element.remove();
     }
 }

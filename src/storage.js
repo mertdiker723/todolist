@@ -20,7 +20,14 @@ export default class Storage{
         localStorage.setItem("todos",JSON.stringify(allTodos));
     }
     
-    deleteOneTodo(){
-        
+    deleteOneTodo(text){
+        const allTodos = this.getTodos();
+
+        allTodos.forEach((item,index) =>{
+            if(item == text){
+                allTodos.splice(index,1);
+            }
+        });
+        localStorage.setItem("todos",JSON.stringify(allTodos));
     }
 }

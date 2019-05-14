@@ -10,7 +10,7 @@ const enterTodo = document.getElementById("todo");
 const searchTodo = document.getElementById("filter");
 const deleteAllTodos = document.getElementById("clear-todos");
 //update etme işlemide yap
-const ulGroup = document.getElementById("ulListGroup");
+const ulListGroup = document.getElementById("ulListGroup");
 
 eventListeners();
 
@@ -18,7 +18,8 @@ function eventListeners(){
     document.addEventListener("DOMContentLoaded",uploadAllTodos);
     
     form.addEventListener("submit",sendTodos);
-   
+    ulListGroup.addEventListener("click",deleteTodo);
+    deleteAllTodos.addEventListener("click",deleteTodosFromUIandStorage);
     
 
 }
@@ -57,4 +58,20 @@ function sendTodos(e){
     e.preventDefault();
 }
 
+function deleteTodo(e){     
+    // if((e.target.className == "fa fa-trash") || (e.target.className == "btnTrash" ))
+      
+    if(e.target.className == "fa fa-trash"){
+        storage.deleteOneTodo(e.target.parentElement.parentElement.textContent.trim());
+        ui.deleteTodoFromUI(e.target.parentElement.parentElement);   
+    }
+    else if(e.target.className == "btnTrash"){
+        storage.deleteOneTodo(e.target.parentElement.textContent.trim());
+        ui.deleteTodoFromUI(e.target.parentElement);
+    }       
+    ui.showAlert("success","All To-Dos were deleted..!");
+}
 
+function deleteTodosFromUIandStorage(){
+
+}

@@ -46,3 +46,18 @@
 .btnTrash:hover {
   background-color: RoyalBlue;
 }
+
+.btnCheck {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 5px 9px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* Darker background on mouse-over */
+.btnCheck:hover {
+  background-color: RoyalBlue;
+}
