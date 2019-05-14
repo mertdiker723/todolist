@@ -14,13 +14,13 @@ export default class Storage{
         return value;
     }
 
-    addTodos(data){
+    addTodos(data){ //push
         const allTodos = this.getTodos();
         allTodos.push(data);
         localStorage.setItem("todos",JSON.stringify(allTodos));
     }
     
-    deleteOneTodo(text){
+    deleteOneTodo(text){ //splice
         const allTodos = this.getTodos();
 
         allTodos.forEach((item,index) =>{

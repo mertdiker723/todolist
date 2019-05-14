@@ -12,6 +12,8 @@ const deleteAllTodos = document.getElementById("clear-todos");
 //update etme işlemide yap
 const ulListGroup = document.getElementById("ulListGroup");
 
+const deleteAll = document.getElementById("deleteAll");
+
 eventListeners();
 
 function eventListeners(){
@@ -19,8 +21,7 @@ function eventListeners(){
     
     form.addEventListener("submit",sendTodos);
     ulListGroup.addEventListener("click",deleteTodo);
-    deleteAllTodos.addEventListener("click",deleteTodosFromUIandStorage);
-    
+    deleteAllTodos.addEventListener("click",deleteTodosFromUIandStorage);    
 
 }
 
@@ -33,16 +34,15 @@ function uploadAllTodos(e){
 function sendTodos(e){
     const enteredValue = enterTodo.value.trim();
     const selectedAllLi = document.querySelectorAll(".list-group-item"); 
-    let control = false;
-    let text;
+    let control = false;    
 
     if(enteredValue === ""){
         ui.showAlert("danger","Please enter a to-do");
     }
     else{
         selectedAllLi.forEach((listItem) => {
-            if(listItem.textContent.trim().toLowerCase() == enteredValue.toLowerCase()){     // küçük büyük harf olayını hallet          
-                control = true; //****
+            if(listItem.textContent.trim().toLowerCase() == enteredValue.toLowerCase()){            
+                control = true; 
             }
         });
             if(control == false){                
@@ -69,7 +69,7 @@ function deleteTodo(e){
         storage.deleteOneTodo(e.target.parentElement.textContent.trim());
         ui.deleteTodoFromUI(e.target.parentElement);
     }       
-    ui.showAlert("success","All To-Dos were deleted..!");
+
 }
 
 function deleteTodosFromUIandStorage(){
@@ -77,6 +77,25 @@ function deleteTodosFromUIandStorage(){
 
     selectedAllLi.forEach((element) => {
         storage.deleteOneTodo(element.textContent.trim());
-        element.remove();
+        element.remove(); //UI delete all
     })
+    ui.showAlert("success","All To-Dos were deleted..!");
 }
+
+ulListGroup.addEventListener("click",(e) => {
+    if(e.target.tagName == "LI"){
+        e.target.classList.toggle("checked");
+
+        ui.clearSelectedButtonAppear();
+    }
+})
+
+deleteAll.addEventListener("click",(e) => {
+    const selectedTodo = document.querySelectorAll(".list-group-item.checked");
+    const buttonAppearInUI  = document.getElementById("deleteAll");
+    selectedTodo.forEach((item)=>{
+        storage.deleteOneTodo(item.textContent.trim());
+        item.remove();
+        buttonAppearInUI.classList.add("d-none");
+    });
+})

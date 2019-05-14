@@ -43,4 +43,16 @@ export default class UI{
     deleteTodoFromUI(element){
         element.remove();
     }
+
+    clearSelectedButtonAppear(){
+        const selectedLiInUI = document.querySelectorAll(".list-group-item.checked"); //Array
+        const buttonAppearInUI  = document.getElementById("deleteAll");
+
+        if(selectedLiInUI.length > 0){
+            buttonAppearInUI.classList.remove("d-none");
+        }
+        else{
+            buttonAppearInUI.classList.add("d-none");
+        }
+    }
 }

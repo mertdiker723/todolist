@@ -61,3 +61,25 @@
 .btnCheck:hover {
   background-color: RoyalBlue;
 }
+
+.checked{
+  background-color: #e0beac;
+  color: black;
+}
+
+
+.btnSelectedDelete {
+  background-color: rgb(190, 190, 190);
+  border: none;
+  color: black;
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btnSelectedDelete:hover {
+  background-color: #5061f8;
+  color: white;
+}
