@@ -73,5 +73,10 @@ function deleteTodo(e){
 }
 
 function deleteTodosFromUIandStorage(){
+    const selectedAllLi = document.querySelectorAll(".list-group-item"); 
 
+    selectedAllLi.forEach((element) => {
+        storage.deleteOneTodo(element.textContent.trim());
+        element.remove();
+    })
 }
