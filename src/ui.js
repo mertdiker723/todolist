@@ -21,14 +21,9 @@ export default class UI{
         data.forEach((text) => {
             html += `
             <li class="list-group-item" style="margin-bottom:11px">
-               <b>${text}</b>
-               
-              
-               <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
-               <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>
-               <button class="btnClone" style="float: right;"><i class="fa fa-exchange"></i></button>   
-            </li>     
-
+               <b>${text}</b>              
+               <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                 
+            </li>
             `;
         })
         this.listGroup.innerHTML = html;
@@ -38,11 +33,8 @@ export default class UI{
     addATodoIntoUI(data){
         this.listGroup.innerHTML += `
         <li class="list-group-item" style="margin-bottom:11px">
-            <b>${data}</b>
- 
-            <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>                           
-            <button class="btnCheck" style="float: right;"><i class="fa fa-check"></i></button>            
-            <button class="btnClone" style="float: right;"><i class="fa fa-exchange"></i></button>     
+            <b>${data}</b> 
+            <button class="btnTrash" style="float: right;"><i class="fa fa-trash"></i></button>
         </li>`;
     }
     deleteTodoFromUI(element){

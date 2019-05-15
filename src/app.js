@@ -7,9 +7,7 @@ const ui = new UI();
 const form = document.getElementById("todo-form");
 
 const enterTodo = document.getElementById("todo");
-const searchTodo = document.getElementById("filter");
 const deleteAllTodos = document.getElementById("clear-todos");
-//update etme işlemide yap
 const ulListGroup = document.getElementById("ulListGroup");
 const deleteAll = document.getElementById("deleteAll");
 const filterText = document.getElementById("filter");
@@ -18,19 +16,16 @@ const filterText = document.getElementById("filter");
 eventListeners();
 
 function eventListeners(){
-    document.addEventListener("DOMContentLoaded",uploadAllTodos);
-    
+    document.addEventListener("DOMContentLoaded",uploadAllTodos);    
     form.addEventListener("submit",sendTodos);
     ulListGroup.addEventListener("click",deleteTodo);
     deleteAllTodos.addEventListener("click",deleteTodosFromUIandStorage);    
-    filterText.addEventListener("keyup",filterWrite);
-    
+    filterText.addEventListener("keyup",filterWrite);    
 }
 
 function uploadAllTodos(e){
     const allTodos = storage.getTodos();
-     ui.addTodoTaskIntoUI(allTodos);
-    
+     ui.addTodoTaskIntoUI(allTodos);    
 }
 
 function sendTodos(e){
@@ -60,9 +55,7 @@ function sendTodos(e){
     e.preventDefault();
 }
 
-function deleteTodo(e){     
-    // if((e.target.className == "fa fa-trash") || (e.target.className == "btnTrash" ))
-      
+function deleteTodo(e){           
     if(e.target.className == "fa fa-trash"){
         storage.deleteOneTodo(e.target.parentElement.parentElement.textContent.trim());
         ui.deleteTodoFromUI(e.target.parentElement.parentElement);   
@@ -117,3 +110,5 @@ function filterWrite(e){
         }
     })
 }
+
+

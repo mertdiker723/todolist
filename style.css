@@ -59,7 +59,7 @@
 
 /* Darker background on mouse-over */
 .btnCheck:hover {
-  background-color: RoyalBlue;
+  background-color: green;
 }
 
 .checked{
@@ -85,23 +85,6 @@
 }
 
 
-
-.btnExchange {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 5px 9px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-left: 6px;
-}
-
-/* Darker background on mouse-over */
-.btnExchange:hover {
-  background-color: RoyalBlue;
-}
-
-
 .btnSelectedUpdate {
   background-color: rgb(190, 190, 190);
   border: none;
@@ -116,4 +99,22 @@
 .btnSelectedUpdate:hover {
   background-color: #54abd3;
   color: white;
+}
+
+
+
+
+.btnCheckGreen {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 5px 9px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* Darker background on mouse-over */
+.btnCheckGreen:hover {
+  background-color: RoyalBlue;
 }
